@@ -1,5 +1,7 @@
 #!/bin/bash
 
+pwd
+
 ### UTILITIES ###
 . .lpc-katacoda-common/logging.sh
 
