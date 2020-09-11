@@ -40,6 +40,11 @@ function get_helm3 {
   curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
 }
 
+function get_ansible {
+  pip3 install ansible openshift jmespath boto3
+  ansible-galaxy collection install community.kubernetes
+}
+
 function deploy_nginx {
   warn "Deploying Nginx Ingress Controller"
   helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
