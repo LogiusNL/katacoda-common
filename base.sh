@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ### UTILITIES ###
-. logging.sh
+. .lpc-katacoda-common/logging.sh
 
 function get_helm3 {
   warn "Updating to helm3"
