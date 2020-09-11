@@ -39,3 +39,12 @@ function get_helm3 {
   warn "Updating to helm3"
   curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
 }
+
+function deploy_nginx {
+  warn "Deploying Nginx Ingress Controller"
+  helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+  helm install nginx-ingress ingress-nginx/ingress-nginx \
+    --set controller.kind=Deployment \
+    --set controller.service.type=NodePort\
+    --set controller.service.nodePorts.http=30080
+}
