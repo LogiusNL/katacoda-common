@@ -17,6 +17,7 @@ function deploy_nginx {
   warn "Deploying Nginx Ingress Controller"
   helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
   helm install nginx-ingress ingress-nginx/ingress-nginx \
+    --version 2.16.0 \
     --set controller.kind=Deployment \
     --set controller.service.type=NodePort\
     --set controller.service.nodePorts.http=30080
